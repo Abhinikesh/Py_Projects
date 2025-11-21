@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Challenge - Web App</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🧮 Math Challenge</h1>
+            <p>Test your math skills with random problems!</p>
+        </header>
+
+        <div class="game-container" id="gameContainer">
+            <!-- Start Screen -->
+            <div class="start-screen" id="startScreen">
+                <div class="start-content">
+                    <h2>Ready to Challenge Yourself?</h2>
+                    <p>You'll get 10 random math problems to solve as quickly as possible!</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Problems</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Operators</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2-100</span>
+                            <span class="stat-label">Range</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="startBtn">Start Challenge</button>
+                </div>
+            </div>
+
+            <!-- Game Screen -->
+            <div class="game-screen hidden" id="gameScreen">
+                <div class="game-header">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="game-stats">
+                        <span class="problem-counter" id="problemCounter">Problem 1 of 10</span>
+                        <span class="timer" id="timer">00:00</span>
+                    </div>
+                </div>
+
+                <div class="problem-container">
+                    <div class="problem-display" id="problemDisplay">
+                        <span class="problem-number" id="problemNumber">1</span>
+                        <span class="problem-expression" id="problemExpression">Loading...</span>
+                        <span class="equals">=</span>
+                    </div>
+                    
+                    <div class="answer-container">
+                        <input type="number" class="answer-input" id="answerInput" placeholder="Your answer" autofocus>
+                        <button class="btn btn-submit" id="submitBtn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="feedback hidden" id="feedback">
+                    <div class="feedback-content">
+                        <div class="feedback-icon" id="feedbackIcon">✓</div>
+                        <div class="feedback-text" id="feedbackText">Correct!</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div class="results-screen hidden" id="resultsScreen">
+                <div class="results-content">
+                    <h2>🎉 Challenge Complete!</h2>
+                    <div class="results-stats">
+                        <div class="result-stat">
+                            <span class="result-number" id="finalTime">00:00</span>
+                            <span class="result-label">Total Time</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-number" id="correctAnswers">10</span>
+                            <span class="result-label">Correct</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-number" id="wrongAnswers">0</span>
+                            <span class="result-label">Wrong</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-number" id="accuracy">100%</span>
+                            <span class="result-label">Accuracy</span>
+                        </div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="btn btn-primary" id="playAgainBtn">Play Again</button>
+                        <button class="btn btn-secondary" id="shareBtn">Share Results</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay hidden" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <p>Loading problems...</p>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
